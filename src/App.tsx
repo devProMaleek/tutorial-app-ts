@@ -12,7 +12,7 @@ import NotFound from './components/NotFound';
 
 import {GlobalStyle} from "./GlobalStyle";
 
-const App = () => (
+const App: React.FC = () => (
     // Renamed as Router
     <Router>
         <Header/>
