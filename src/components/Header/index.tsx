@@ -13,7 +13,7 @@ import {Wrapper, Content, LogoImg, TMDBLogoImg} from "./Header.styles";
 
 // Header Component
 
-const Header = () => (
+const Header: React.FC = () => (
     <Wrapper>
         <Content>
             <Link to='/'>

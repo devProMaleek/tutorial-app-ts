@@ -1,19 +1,20 @@
 // Import the necessary libraries
 import React  from 'react';
-import PropTypes from 'prop-types';
+
 
 // Import Styles
-import { Wrapper, Content } from  './Grid.styles'
+import { Wrapper, Content } from './Grid.styles'
 
-const Grid = ({ header, children }) => (
+// Types
+type Props = {
+    header: string;
+}
+
+const Grid: React.FC<Props> = ({ header, children }) => (
     <Wrapper>
         <h1>{ header }</h1>
         <Content>{ children }</Content>
     </Wrapper>
 )
 
-// Validate Props
-Grid.propTypes = {
-    header: PropTypes.string
-}
 export default Grid;

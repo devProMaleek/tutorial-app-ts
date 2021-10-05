@@ -1,12 +1,17 @@
 // Import the necessary library
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
-
 // Import styles
 import { Image } from './Thumb.styles';
 
-const Thumb = ({ image, movieId, clickable}) => (
+// Types
+type Props = {
+     image: string;
+     movieId: number;
+     clickable: boolean;
+}
+
+const Thumb: React.FC<Props> = ({ image, movieId, clickable}) => (
     <div>
          {/*If clickable.*/}
         {clickable ? (
@@ -19,10 +24,5 @@ const Thumb = ({ image, movieId, clickable}) => (
 
 // Validating prop types.
 
-Thumb.propTypes = {
-     image: PropTypes.string,
-     movieId: PropTypes.number,
-     clickable: PropTypes.bool
-}
 
 export default Thumb;
