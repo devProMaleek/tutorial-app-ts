@@ -14,12 +14,20 @@ import NoImage from '../../images/no_image.jpg';
 // Import the style component
 import { Wrapper, Content, Text } from './MovieInfo.styles';
 
+// Type
+// @ts-ignore
+import { MovieState } from '../../hooks/useMovieFetch';
+
+type Props = {
+    movie: MovieState;
+}
+
 // Create the MovieInfo Component
-const MovieInfo = ({ movie }) => (
+const MovieInfo: React.FC<Props> = ({ movie }) => (
     <Wrapper backdrop={movie.backdrop_path}>
         <Content>
             <Thumb image={ movie.poster_path ? `${IMAGE_BASE_URL}${POSTER_SIZE}${movie.poster_path}`  : NoImage}
-                   clickable={false} alt='movie-thumb'/>
+                   clickable={false}/>
             <Text>
                 <h1>{movie.title}</h1>
                 <h3>PLOT</h3>
@@ -43,9 +51,5 @@ const MovieInfo = ({ movie }) => (
 
 )
 
-// Validating props
-MovieInfo.propTypes = {
-    movie: PropTypes.object
-}
 // Export the component
 export default MovieInfo;

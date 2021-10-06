@@ -1,14 +1,17 @@
 // Import the necessary the library.
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types'
-
 
 // Import the styled component
 import { Wrapper, Content } from './BreadCrumb.styles';
 
+// Types
+type Props = {
+    movieTitle: string;
+}
+
 // BreadCrumb Component.
-const BreadCrumb = ({ movieTitle }) => (
+const BreadCrumb: React.FC<Props> = ({ movieTitle }) => (
     <Wrapper>
         <Content>
             <Link to='/'>
@@ -20,9 +23,5 @@ const BreadCrumb = ({ movieTitle }) => (
     </Wrapper>
 )
 
-// Set PropTypes
-BreadCrumb.propTypes = {
-    movieTitle: PropTypes.string
-}
 // Export the BreadCrumb Component
 export default BreadCrumb;

@@ -13,19 +13,19 @@ import MovieInfo from './MovieInfo'
 import MovieInfoBar from './MovieInfoBar';
 import Actor from './Actor';
 
-
 // Import Hooks
+// @ts-ignore
 import { useMovieFetch } from '../Hooks/useMovieFetch';
 
 // Import image
 import NoImage from '../images/no_image.jpg'
 
 // Movie Component
-const Movie = () => {
+const Movie: React.FC = () => {
     // Get the movieId params
     const { movieId } = useParams();
 
-    const { state: movie, loading, error } = useMovieFetch(movieId);
+    const { state: movie, loading, error } = useMovieFetch(Number(movieId));
 
     if (loading) return <Spinner/>;
     if (error) return <div>Something went wrong...</div>

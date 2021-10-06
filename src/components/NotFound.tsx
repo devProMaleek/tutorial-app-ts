@@ -2,6 +2,6 @@
 import React from 'react';
 
 // Not-found component
-const NotFound = () => <div>NotFound</div>;
+const NotFound: React.FC = () => <div>NotFound</div>;
 
 export default NotFound;
